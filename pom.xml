@@ -3,7 +3,7 @@
     <groupId>pl.thulium</groupId>
     <artifactId>asterisk-java</artifactId>
     <name>Asterisk-Java</name>
-    <version>1.0.1</version>
+    <version>1.0.1-SNAPSHOT</version>
     <description>The free Java library for Asterisk PBX integration.</description>
     <inceptionYear>2004</inceptionYear>
     <developers>
@@ -113,6 +113,26 @@ org.apache.log4j;resolution:=optional
                         <goals>
                             <goal>attached</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>deploy</phase>
+                        <goals><goal>jar-no-fork</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>deploy</phase>
+                        <goals><goal>deploy</goal></goals>
                     </execution>
                 </executions>
             </plugin>
